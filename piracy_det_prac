@@ -1,29 +1,28 @@
-import tkinter as tk
-import time
+import tkinter as tk #imports the tkinter library to create a graphical user interface (GUI) for the program
 
 
-Check_Parm_Sec_Not_Allowed = {
-    "U_ID": 0,
-    "S_ID": 0,
-    "ST_ID": 0
+Check_Parm_Sec_Not_Allowed = { #dictionary of parameters that are not allowed
+    "U_ID": 0, #user id
+    "S_ID": 0, #service id
+    "ST_ID": 0 #steam id
 }
 
-User_Parm_C = {
-    "U_ID": int(input("Enter User ID: ")),
-    "S_ID": int(input("Enter Service ID: ")),
-    "ST_ID": int(input("Enter Steam ID: "))
+User_Parm_C = { #dictionary of user parameters that will be checked against the unauthorized parameters
+    "U_ID": int(input("Enter User ID: ")), #ask's for user id
+    "S_ID": int(input("Enter Service ID: ")),#ask's for service id
+    "ST_ID": int(input("Enter Steam ID: "))#ask's for steam id
 }
 
-if User_Parm_C == Check_Parm_Sec_Not_Allowed:
-    root = tk.Tk()
-    root.configure(bg="red")
-    root.title("pirated")
-    root.geometry("400x400")
-    root.mainloop()
+if User_Parm_C == Check_Parm_Sec_Not_Allowed: #checks if the user parameters match the unauthorized parameters
+    root = tk.Tk() #creates a new window
+    root.configure(bg="red") #sets the background color to red to show that the user is unauthorized
+    root.title("pirated") #sets the title of the window to "pirated" and shows that the user is unauthorized
+    root.geometry("400x400") #sets the size of the window to 400x400 pixels
+    root.mainloop() #starts the main loop of the window to display it
 
-if User_Parm_C != Check_Parm_Sec_Not_Allowed:
-    root = tk.Tk()
-    root.configure(bg="green")
-    root.title("program")
-    root.geometry("400x400")
-    root.mainloop()
+if User_Parm_C != Check_Parm_Sec_Not_Allowed: #if the user parameters do not match the unauthorized parameters, it will show a green window to indicate that the user is authorized
+    root = tk.Tk() #creates a new window
+    root.configure(bg="green") #sets the background color to green to show that the user is authorized
+    root.title("program") #sets the title of the window to "program" to show that the user is authorized
+    root.geometry("400x400") #sets the size of the window to 400x400 pixels
+    root.mainloop() #starts the main loop of the window to display it
